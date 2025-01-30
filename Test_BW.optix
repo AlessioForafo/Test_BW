@@ -1,0 +1,96 @@
+Project:
+ Name: Test_BW
+ GUID: 3f5656871d3e2f0edef08b3e2124d1eb
+ ProjectNamespaceIndex: 7
+ Description: ''
+ Company: ''
+ Copyright: ''
+ FormatVersion: 1
+ ProductVersion: 1.5
+ CoreVersion: 4.0
+ Dependencies:
+  2:
+   Uri: 'urn:FTOptix:CoreBase'
+   Module: FTOptix.CoreBase
+   Version: 4.0
+  3:
+   Uri: 'urn:FTOptix:UI'
+   Module: FTOptix.UI
+   Version: 14.2
+  4:
+   Uri: 'urn:FTOptix:HMIProject'
+   Module: FTOptix.HMIProject
+   Version: 6.5
+  5:
+   Uri: 'urn:FTOptix:NativeUI'
+   Module: FTOptix.NativeUI
+   Version: 2.1
+  6:
+   Uri: 'urn:FTOptix:Retentivity'
+   Module: FTOptix.Retentivity
+   Version: 1.0
+  8:
+   Uri: 'urn:FTOptix:Core:Net'
+   Module: FTOptix.Core.Net
+   Version: 2.0
+  9:
+   Uri: 'urn:FTOptix:CommunicationDriver'
+   Module: FTOptix.CommunicationDriver
+   Version: 3.0
+  10:
+   Uri: 'urn:FTOptix:CommunicationDriver:Net'
+   Module: FTOptix.CommunicationDriver.Net
+   Version: 3.0
+  11:
+   Uri: 'urn:FTOptix:CoreBase:Net'
+   Module: FTOptix.CoreBase.Net
+   Version: 1.1
+  12:
+   Uri: 'urn:FTOptix:UI:Net'
+   Module: FTOptix.UI.Net
+   Version: 14.2
+  13:
+   Uri: 'urn:FTOptix:Retentivity:Net'
+   Module: FTOptix.Retentivity.Net
+   Version: 1.0
+  14:
+   Uri: 'urn:FTOptix:HMIProject:Net'
+   Module: FTOptix.HMIProject.Net
+   Version: 4.8
+  15:
+   Uri: 'urn:FTOptix:Alarm'
+   Module: FTOptix.Alarm
+   Version: 6.0
+  16:
+   Uri: 'urn:FTOptix:Alarm:Net'
+   Module: FTOptix.Alarm.Net
+   Version: 1.2
+  17:
+   Uri: 'urn:FTOptix:NativeUI:Net'
+   Module: FTOptix.NativeUI.Net
+   Version: 1.0
+  18:
+   Uri: 'urn:FTOptix:NetLogic'
+   Module: FTOptix.NetLogic
+   Version: 4.0
+  19:
+   Uri: 'urn:FTOptix:CODESYS'
+   Module: FTOptix.CODESYS
+   Version: 2.0
+  20:
+   Uri: 'urn:FTOptix:CODESYS:Net'
+   Module: FTOptix.CODESYS.Net
+   Version: 2.0
+ Statistics:
+  TotalNodeCount: 171527
+  Objects: 6158
+  ObjectTypes: 4
+  Variables: 165363
+  VariableTypes: 0
+  DataTypes: 0
+  Methods: 2
+  References: 33010
+  ReferenceTypes: 0
+  Files: 27
+ Nodes:
+ - File: Nodes/Test_BW.yaml
