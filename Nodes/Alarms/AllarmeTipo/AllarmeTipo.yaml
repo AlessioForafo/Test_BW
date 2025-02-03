@@ -1,0 +1,212 @@
+Name: AllarmeTipo
+Id: g=ac0adc375ff13ad7763b5beb94ced5fd
+Type: FolderType
+Children:
+- Name: AllarmeDigitaleBW
+  Id: g=bbbeb2e6f58ec5f03bcf95992a7044a2
+  Supertype: OffNormalAlarmController
+  Children:
+  - Class: Reference
+    Target: ns=15;i=81
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=82
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=83
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=130
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=135
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=132
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=146
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=148
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=150
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=152
+    Direction: Forward
+  - Class: Reference
+    Target: ns=15;i=154
+    Direction: Forward
+  - Name: NormalStateValue
+    Id: g=37f8600148fa71e9df3cd047be6498e0
+    Type: BaseDataVariableType
+    DataType: Double
+  - Name: InputValue
+    Id: g=4e72614704161b84fe83db7f82276cde
+    Type: BaseDataVariableType
+    DataType: Double
+    Children:
+    - Name: DynamicLink
+      Id: g=ded2a87d16e7bba6ef3319659ea3c483
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/ToAcknowledge"
+      Children:
+      - Name: Mode
+        Id: g=f027d62230654b8bf5e574753b6a6a45
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: LastEvent
+    Id: g=bdb89cf5d6ec44d0a75bdb8e5117a258
+    Type: BaseDataVariableType
+    DataType: BaseDataType
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+  - Name: z_BW_ToAck
+    Id: g=b0642cfabcc0a666c30bff464a36fcc1
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Children:
+    - Name: DynamicLink
+      Id: g=80be993e9cfc295eac3007e24a0e4a98
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/ToAcknowledge"
+      Children:
+      - Name: Mode
+        Id: g=50237d1851184307b2263619ded9b258
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: z_BW_Type
+    Id: g=cc933c0b96cb044c341038e84a0baf7d
+    Type: BaseDataVariableType
+    DataType: Byte
+    Children:
+    - Name: DynamicLink
+      Id: g=05bac9756943d94f92ef92684eb79772
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/Tipo"
+      Children:
+      - Name: Mode
+        Id: g=4763af1fc10d8a77e2b75077cf14776d
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: z_BW_ID
+    Id: g=90a44ba591d423d4002733df781ae09b
+    Type: BaseDataVariableType
+    DataType: Int32
+    Children:
+    - Name: DynamicLink
+      Id: g=cf2a2aa0525941aabc0f0b1f7e82ad47
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/ID"
+      Children:
+      - Name: Mode
+        Id: g=888b7849293585f9ff6a630daef808b5
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: z_BW_Value
+    Id: g=2774035a66efe5b664d34a3f624ef33d
+    Type: BaseDataVariableType
+    DataType: Byte
+    Children:
+    - Name: DynamicLink
+      Id: g=3f416ccb8f2c41be3f1bd5e1313e1c35
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/Value"
+      Children:
+      - Name: Mode
+        Id: g=6a9852339a9ad5f30d8c6c0c5640b1bd
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: z_BW_Category
+    Id: g=55daaab7ee50e9eb346078f3b1ef2392
+    Type: BaseDataVariableType
+    DataType: Int16
+    Children:
+    - Name: DynamicLink
+      Id: g=e524a561d4d1458c40ce5412746f2250
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/Category"
+      Children:
+      - Name: Mode
+        Id: g=951ec582de3d36facfbc86b1705edc57
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: z_BW_DateTime
+    Id: g=22ca1fdeed42b599f4ae7b915db5fae2
+    Type: BaseDataVariableType
+    DataType: DateTime
+    Children:
+    - Name: DynamicLink
+      Id: g=eadae5a31cd7134931876af0d4fc8a9d
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/DataOra"
+      Children:
+      - Name: Mode
+        Id: g=3469fa59021b9774d87e2d49beb743de
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: z_BW_DateTimeAck
+    Id: g=183cd34e56826a3e6f7a3b58d3382e72
+    Type: BaseDataVariableType
+    DataType: DateTime
+    Children:
+    - Name: DynamicLink
+      Id: g=24c01039b7b7a7c4991142660a4bdf3a
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "{VarPLC}/DataOraACK"
+      Children:
+      - Name: Mode
+        Id: g=d46cf9ec775e658ef65f8cc4a221fb97
+        Type: BaseVariableType
+        DataType: DynamicLinkMode
+        ModellingRule: Optional
+        Value: 2
+  - Name: AutoAcknowledge
+    Id: g=ff0313629587d0364db949ac2329c238
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true
+  - Name: AutoConfirm
+    Id: g=504fd9214fb3ed798136e0274238c49f
+    Type: BaseDataVariableType
+    DataType: Boolean
+    ModellingRule: Optional
+    Value: true
+  - Name: VarPLC
+    Id: g=9fa9349abdbfb5a05a61f84b48045011
+    Type: Alias
+    DataType: NodeId
+    Children:
+    - Name: Kind
+      Id: g=34edff692d984074dc169a861b824a47
+      Type: PropertyType
+      DataType: NodeId
+      Value: "/Objects/Test_BW/CommDrivers/CODESYSDriver1/CODESYSStation1/Tags/Application/PLC_PRG/MainQueue/0"
+  - Class: Reference
+    Type: GeneratesEvent
+    Target: g=7dd423dad0b701b43f61b1297054b638

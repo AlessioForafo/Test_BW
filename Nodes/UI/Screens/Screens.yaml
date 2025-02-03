@@ -796,43 +796,6 @@ Children:
             Type: BaseDataVariableType
             DataType: Boolean
             Value: true
-        - Name: SourceVariable
-          Type: DataGridColumn
-          Children:
-          - Name: Title
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            Value: {"NamespaceIndex":7,"TextId":"SourceName"}
-          - Name: Width
-            Type: BaseDataVariableType
-            DataType: Size
-            Value: 200.0
-          - Name: HeaderAlignment
-            Type: BaseDataVariableType
-            DataType: TextHorizontalAlignment
-            Value: 1
-          - Name: ContentAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-          - Name: OrderBy
-            Type: BaseDataVariableType
-            DataType: NodePath
-            Value: "{Item}/SourceName"
-          - Name: DataItemTemplate
-            Type: DataGridLabelItemTemplate
-            Children:
-            - Name: Text
-              Type: BaseDataVariableType
-              DataType: LocalizedText
-              Children:
-              - Name: DynamicLink
-                Type: DynamicLink
-                DataType: NodePath
-                Value: "{Item}/SourceName"
-          - Name: Visible
-            Type: BaseDataVariableType
-            DataType: Boolean
-            Value: true
         - Name: Message
           Type: DataGridColumn
           Children:
@@ -870,263 +833,31 @@ Children:
             Type: BaseDataVariableType
             DataType: Boolean
             Value: true
-        - Name: Active
+        - Name: ID
           Type: DataGridColumn
           Children:
           - Name: Title
             Type: BaseDataVariableType
             DataType: LocalizedText
-            Value: {"NamespaceIndex":7,"TextId":"Active"}
+            Value: {"LocaleId":"en-US","Text":"ID"}
           - Name: Width
             Type: BaseDataVariableType
             DataType: Size
-            Value: 80.0
-          - Name: HeaderAlignment
-            Type: BaseDataVariableType
-            DataType: TextHorizontalAlignment
-            Value: 1
-          - Name: ContentAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            Value: 2
-          - Name: OrderBy
-            Type: BaseDataVariableType
-            DataType: NodePath
-            Value: "{Item}/ActiveState/Id"
-          - Name: DataItemTemplate
-            Type: DataGridImageItemTemplate
-            Children:
-            - Name: Path
-              Type: BaseDataVariableType
-              DataType: ResourceUri
-              Children:
-              - Name: KeyValueConverter1
-                Type: ValueMapConverter
-                Children:
-                - Name: Source
-                  Type: BaseDataVariableType
-                  DataType: BaseDataType
-                  ReferenceType: HasSource
-                  Children:
-                  - Name: DynamicLink
-                    Type: DynamicLink
-                    DataType: NodePath
-                    Value: "{Item}/ActiveState/Id"
-                - Name: ns=2;Pairs
-                  Type: BaseObjectType
-                  Children:
-                  - Name: Pair
-                    Type: ValueMapPair
-                    Children:
-                    - Name: Key
-                      Type: BaseDataVariableType
-                      DataType: Boolean
-                      Value: true
-                    - Name: Value
-                      Type: BaseDataVariableType
-                      DataType: ResourceUri
-                      Value: "ns=7;%PROJECTDIR%/RadiobuttonDark.svg"
-                  - Name: Pair1
-                    Type: ValueMapPair
-                    Children:
-                    - Name: Key
-                      Type: BaseDataVariableType
-                      DataType: Boolean
-                    - Name: Value
-                      Type: BaseDataVariableType
-                      DataType: ResourceUri
-                      Value: "ns=7;%PROJECTDIR%/RadiobuttonDarkEmpty.svg"
-            - Name: Width
-              Type: BaseDataVariableType
-              DataType: Size
-              Value: 16.0
-            - Name: Height
-              Type: BaseDataVariableType
-              DataType: Size
-              Value: 16.0
+            Value: -1.0
           - Name: Visible
             Type: BaseDataVariableType
             DataType: Boolean
             Value: true
-        - Name: Acked
-          Type: DataGridColumn
-          Children:
-          - Name: Title
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            Value: {"NamespaceIndex":7,"TextId":"Acked"}
-          - Name: Width
-            Type: BaseDataVariableType
-            DataType: Size
-            Value: 80.0
           - Name: HeaderAlignment
             Type: BaseDataVariableType
             DataType: TextHorizontalAlignment
-            Value: 1
           - Name: ContentAlignment
             Type: BaseVariableType
             DataType: HorizontalAlignment
-            Value: 2
           - Name: OrderBy
             Type: BaseDataVariableType
             DataType: NodePath
-            Value: "{Item}/AckedState/Id"
-          - Name: DataItemTemplate
-            Type: DataGridImageItemTemplate
-            Children:
-            - Name: Path
-              Type: BaseDataVariableType
-              DataType: ResourceUri
-              Children:
-              - Name: KeyValueConverter1
-                Type: ValueMapConverter
-                Children:
-                - Name: Source
-                  Type: BaseDataVariableType
-                  DataType: BaseDataType
-                  ReferenceType: HasSource
-                  Children:
-                  - Name: DynamicLink
-                    Type: DynamicLink
-                    DataType: NodePath
-                    Value: "{Item}/AckedState/Id"
-                - Name: ns=2;Pairs
-                  Type: BaseObjectType
-                  Children:
-                  - Name: Pair
-                    Type: ValueMapPair
-                    Children:
-                    - Name: Key
-                      Type: BaseDataVariableType
-                      DataType: Boolean
-                      Value: true
-                    - Name: Value
-                      Type: BaseDataVariableType
-                      DataType: ResourceUri
-                      Value: "ns=7;%PROJECTDIR%/ApplyDark.png"
-                  - Name: Pair1
-                    Type: ValueMapPair
-                    Children:
-                    - Name: Key
-                      Type: BaseDataVariableType
-                      DataType: Boolean
-                    - Name: Value
-                      Type: BaseDataVariableType
-                      DataType: ResourceUri
-                      Value: "ns=7;%PROJECTDIR%/CloseDark.png"
-            - Name: Width
-              Type: BaseDataVariableType
-              DataType: Size
-              Value: 16.0
-            - Name: Height
-              Type: BaseDataVariableType
-              DataType: Size
-              Value: 16.0
-          - Name: Visible
-            Type: BaseDataVariableType
-            DataType: Boolean
-            Value: true
-        - Name: Confirmed
-          Type: DataGridColumn
-          Children:
-          - Name: Title
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            Value: {"NamespaceIndex":7,"TextId":"Confirmed"}
-          - Name: Width
-            Type: BaseDataVariableType
-            DataType: Size
-            Value: 80.0
-          - Name: HeaderAlignment
-            Type: BaseDataVariableType
-            DataType: TextHorizontalAlignment
-            Value: 1
-          - Name: ContentAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            Value: 2
-          - Name: OrderBy
-            Type: BaseDataVariableType
-            DataType: NodePath
-            Value: "{Item}/ConfirmedState/Id"
-          - Name: DataItemTemplate
-            Type: DataGridImageItemTemplate
-            Children:
-            - Name: Path
-              Type: BaseDataVariableType
-              DataType: ResourceUri
-              Children:
-              - Name: KeyValueConverter1
-                Type: ValueMapConverter
-                Children:
-                - Name: Source
-                  Type: BaseDataVariableType
-                  DataType: BaseDataType
-                  ReferenceType: HasSource
-                  Children:
-                  - Name: DynamicLink
-                    Type: DynamicLink
-                    DataType: NodePath
-                    Value: "{Item}/ConfirmedState/Id"
-                - Name: ns=2;Pairs
-                  Type: BaseObjectType
-                  Children:
-                  - Name: Pair
-                    Type: ValueMapPair
-                    Children:
-                    - Name: Key
-                      Type: BaseDataVariableType
-                      DataType: Boolean
-                      Value: true
-                    - Name: Value
-                      Type: BaseDataVariableType
-                      DataType: ResourceUri
-                      Value: "ns=7;%PROJECTDIR%/ApplyDark.png"
-                  - Name: Pair1
-                    Type: ValueMapPair
-                    Children:
-                    - Name: Key
-                      Type: BaseDataVariableType
-                      DataType: Boolean
-                    - Name: Value
-                      Type: BaseDataVariableType
-                      DataType: ResourceUri
-                      Value: "ns=7;%PROJECTDIR%/CloseDark.png"
-            - Name: Width
-              Type: BaseDataVariableType
-              DataType: Size
-              Value: 16.0
-            - Name: Height
-              Type: BaseDataVariableType
-              DataType: Size
-              Value: 16.0
-          - Name: Visible
-            Type: BaseDataVariableType
-            DataType: Boolean
-            Value: true
-        - Name: Severity
-          Type: DataGridColumn
-          Children:
-          - Name: Title
-            Type: BaseDataVariableType
-            DataType: LocalizedText
-            Value: {"NamespaceIndex":7,"TextId":"Severity"}
-          - Name: Width
-            Type: BaseDataVariableType
-            DataType: Size
-            Value: 80.0
-          - Name: HeaderAlignment
-            Type: BaseDataVariableType
-            DataType: TextHorizontalAlignment
-            Value: 2
-          - Name: ContentAlignment
-            Type: BaseVariableType
-            DataType: HorizontalAlignment
-            Value: 1
-          - Name: OrderBy
-            Type: BaseDataVariableType
-            DataType: NodePath
-            Value: "{Item}/Severity"
+            Value: "{Item}/z_BW_ID"
           - Name: DataItemTemplate
             Type: DataGridLabelItemTemplate
             Children:
@@ -1134,14 +865,46 @@ Children:
               Type: BaseDataVariableType
               DataType: LocalizedText
               Children:
-              - Name: CollegamentoDinamico
+              - Name: DynamicLink
                 Type: DynamicLink
                 DataType: NodePath
-                Value: "{Item}/Severity"
+                Value: "{Item}/z_BW_ID"
+        - Name: Category
+          Type: DataGridColumn
+          Children:
+          - Name: Title
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Value: {"LocaleId":"en-US","Text":"Category"}
+          - Name: Width
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: -1.0
           - Name: Visible
             Type: BaseDataVariableType
             DataType: Boolean
             Value: true
+          - Name: HeaderAlignment
+            Type: BaseDataVariableType
+            DataType: TextHorizontalAlignment
+          - Name: ContentAlignment
+            Type: BaseVariableType
+            DataType: HorizontalAlignment
+          - Name: OrderBy
+            Type: BaseDataVariableType
+            DataType: NodePath
+            Value: "{Item}/z_BW_Category"
+          - Name: DataItemTemplate
+            Type: DataGridLabelItemTemplate
+            Children:
+            - Name: Text
+              Type: BaseDataVariableType
+              DataType: LocalizedText
+              Children:
+              - Name: DynamicLink
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{Item}/z_BW_Category"
       - Name: SelectedItem
         Type: NodePointer
         DataType: NodeId

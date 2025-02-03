@@ -20,20 +20,30 @@ public class CreazioneAllarmi : BaseNetLogic
     public void GeneraAllarmi()
     {
         // Insert code to be executed by the method
-        foreach (var item in Project.Current.Get("Alarms").Children)
+        foreach (var item in Project.Current.Get("Alarms/AllarmeIstanze").Children)
         {
             item.Delete();
         }
+        Log.Info("Allarmi cancellati!");
         
         for (int i = 0; i < 3000; i++)
         {
-            var allarme = InformationModel.Make<DigitalAlarm>("Allarme_" + i);
-            allarme.InputValueVariable.SetDynamicLink(Project.Current.GetVariable("CommDrivers/CODESYSDriver1/CODESYSStation1/Tags/Application/PLC_PRG/MainQueue/" + i + "/ToAcknowledge"),DynamicLinkMode.Read);
-            allarme.Message = "Testo allarme " + i;
-            allarme.SeverityVariable.SetDynamicLink(Project.Current.GetVariable("CommDrivers/CODESYSDriver1/CODESYSStation1/Tags/Application/PLC_PRG/MainQueue/" + i + "/Tipo"),DynamicLinkMode.Read);
-            allarme.AutoAcknowledge = true;
-            allarme.AutoConfirm = true;
-            Project.Current.Get("Alarms").Add(allarme);
+            var allarme = InformationModel.MakeObject("Allarme_" + i,Project.Current.Get("Alarms/AllarmeTipo/AllarmeDigitaleBW").NodeId);
+            var allarmeAppoggio = (DigitalAlarm)allarme;
+            allarmeAppoggio.Message = "Testo allarme " + i;
+            //allarme.GetVariable("Message").Value = "Testo allarme " + i;
+            allarme.SetAlias("VarPLC", Project.Current.Get("CommDrivers/CODESYSDriver1/CODESYSStation1/Tags/Application/PLC_PRG/MainQueue/" + i));
+            Project.Current.Get("Alarms/AllarmeIstanze").Add(allarme);
     }
+    }
+
+    [ExportMethod]
+    public void CancellaAllarmi()
+    {
+        // Insert code to be executed by the method
+        foreach (var item in Project.Current.Get("Alarms/AllarmeIstanze").Children)
+        {
+            item.Delete();
+        }
     }
 }

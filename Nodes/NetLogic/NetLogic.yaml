@@ -10,6 +10,8 @@ Children:
     Value: 180
   - Class: Method
     Name: GeneraAllarmi
+  - Class: Method
+    Name: CancellaAllarmi
 - Name: FromPlcToModel
   Type: NetLogic
   WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
