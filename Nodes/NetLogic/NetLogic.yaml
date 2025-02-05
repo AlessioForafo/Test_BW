@@ -49,3 +49,5 @@ Children:
        "highestIgnoredVersion": 0
       }
      }
+- Name: CreazioneAllarmiRuntime
+  Type: NetLogic

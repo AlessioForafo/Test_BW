@@ -245,7 +245,7 @@ Children:
         - Name: Panel
           Type: NodePointer
           DataType: NodeId
-          Value: "/Objects/Test_BW/UI/Screens/Screen1"
+          Value: "/Objects/Test_BW/UI/Screens/AllarmiAttivi"
           Children:
           - Name: Kind
             Type: PropertyType
@@ -260,13 +260,28 @@ Children:
         - Name: Panel
           Type: NodePointer
           DataType: NodeId
-          Value: "/Objects/Test_BW/UI/Screens/Screen2"
+          Value: "/Objects/Test_BW/UI/Screens/StoricoAllarmi"
           Children:
           - Name: Kind
             Type: PropertyType
             DataType: NodeId
             Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
       - Name: Panel3
+        Type: NavigationPanelItem
+        Children:
+        - Name: Title
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+        - Name: Panel
+          Type: NodePointer
+          DataType: NodeId
+          Value: "/Objects/Test_BW/UI/Screens/Screen2"
+          Children:
+          - Name: Kind
+            Type: PropertyType
+            DataType: NodeId
+            Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
+      - Name: Panel4
         Type: NavigationPanelItem
         Children:
         - Name: Title
