@@ -2,3 +2,39 @@ Name: Model
 Type: ModelCategoryFolder
 Children:
 - File: IstanzeOggettiMainQueue/IstanzeOggettiMainQueue.yaml
+- Class: DataType
+  Name: Enumeration1
+  Id: g=468434c1178a33423f916a995b081d11
+  Supertype: Enumeration
+  EnumDefinition: 
+   {
+    "Name": "Enumeration1",
+    "DataType": {
+     "IdType": 2,
+     "Id": "468434c1178a33423f916a995b081d11",
+     "Namespace": 7
+    },
+    "Fields": [{
+      "Name": "Value0",
+      "Value": 0,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Storico Allarmi"
+      }
+     },{
+      "Name": "Value1",
+      "Value": 1,
+      "DisplayName": {
+       "LocaleId": "en-US",
+       "Text": "Allarmi Attivi"
+      }
+     }]
+   }
+  Children:
+  - Name: ns=0;EnumValues
+    Type: BaseDataVariableType
+    DataType: EnumValueType
+    ModellingRule: None
+    ValueRank: OneDimension
+    ArrayDimensions: [0]
+    Value: [{"TypeId":{"Id":7594},"Body":{"Value":0,"DisplayName":{"LocaleId":"en-US","Text":"Storico Allarmi"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}},{"TypeId":{"Id":7594},"Body":{"Value":1,"DisplayName":{"LocaleId":"en-US","Text":"Allarmi Attivi"},"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]

@@ -47,19 +47,7 @@ Children:
     Id: g=4e72614704161b84fe83db7f82276cde
     Type: BaseDataVariableType
     DataType: Double
-    Children:
-    - Name: DynamicLink
-      Id: g=ded2a87d16e7bba6ef3319659ea3c483
-      Type: DynamicLink
-      DataType: NodePath
-      Value: "{VarPLC}/ToAcknowledge"
-      Children:
-      - Name: Mode
-        Id: g=f027d62230654b8bf5e574753b6a6a45
-        Type: BaseVariableType
-        DataType: DynamicLinkMode
-        ModellingRule: Optional
-        Value: 2
+    Value: 1.0
   - Name: LastEvent
     Id: g=bdb89cf5d6ec44d0a75bdb8e5117a258
     Type: BaseDataVariableType
