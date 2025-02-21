@@ -12,6 +12,9 @@ using FTOptix.CoreBase;
 using FTOptix.Alarm;
 using FTOptix.CommunicationDriver;
 using FTOptix.Core;
+using FTOptix.OPCUAServer;
+using FTOptix.Store;
+using FTOptix.SQLiteStore;
 #endregion
 
 public class CreazioneAllarmiRuntime : BaseNetLogic

@@ -1,4 +1,5 @@
 Name: AllarmeTipo
+Id: g=c9ac40dddf5e035078a26253df10219d
 Type: FolderType
 Children:
 - Name: AllarmeDigitaleBW
@@ -39,144 +40,331 @@ Children:
     Target: ns=15;i=154
     Direction: Forward
   - Name: NormalStateValue
+    Id: g=cb1fb593a5a5c14d93b20500e4a176d6
     Type: BaseDataVariableType
     DataType: Double
   - Name: InputValue
+    Id: g=5806481e492f6995002e42adc263bc21
     Type: BaseDataVariableType
     DataType: Double
     Value: 1.0
     Children:
     - Name: DynamicLink
+      Id: g=b665d65d2cd383f91015a3e383d96395
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/ToAcknowledge"
       Children:
       - Name: Mode
+        Id: g=d2216806efa8b6cde3b060c1efad4d43
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: LastEvent
+    Id: g=7e0ea0eee9a238215033836b9b673066
     Type: BaseDataVariableType
     DataType: BaseDataType
     ValueRank: OneDimension
     ArrayDimensions: [0]
   - Name: z_BW_ToAck
+    Id: g=e630578d102e30c2cd15837a5706c467
     Type: BaseDataVariableType
     DataType: Boolean
     Children:
     - Name: DynamicLink
+      Id: g=acb69eba6f9941e94654331be2f35f3c
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/ToAcknowledge"
       Children:
       - Name: Mode
+        Id: g=ea8a65b637f425fc33d2780898ee44d7
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: z_BW_Type
+    Id: g=bfb26989078df53405b3318e50ac2ca4
     Type: BaseDataVariableType
     DataType: Byte
     Children:
     - Name: DynamicLink
+      Id: g=0b30b45ec45aec10d5ae2976f25c60bc
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/Tipo"
       Children:
       - Name: Mode
+        Id: g=f3f512aaab99e16ac54a8de228fb70dd
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: z_BW_ID
+    Id: g=fa5e8f9d2d0718b08b70ca9691a7d317
     Type: BaseDataVariableType
     DataType: Int32
     Children:
     - Name: DynamicLink
+      Id: g=5520411698d0b67e8781b38f661b282c
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/ID"
       Children:
       - Name: Mode
+        Id: g=bf6b5cd5d34a1aa8275a9a2504641108
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: z_BW_Value
+    Id: g=0e53e2f22b568f3a7ec318fce890bfbd
     Type: BaseDataVariableType
     DataType: Byte
     Children:
     - Name: DynamicLink
+      Id: g=fa09fd538dfe722b2bae207d92a42102
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/Value"
       Children:
       - Name: Mode
+        Id: g=e93b7a3d84e98243044773046e4c9b14
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: z_BW_Category
+    Id: g=dd76b41ee66803cb5eecf0ffe8e037fc
     Type: BaseDataVariableType
     DataType: Int16
     Children:
     - Name: DynamicLink
+      Id: g=333dd514b05f766fbabe5f0f54a11bdf
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/Category"
       Children:
       - Name: Mode
+        Id: g=9f4e9f3a49660d7e889353c35afe918e
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: z_BW_DateTime
+    Id: g=95b8e14dc0d446044415d886cdfb081f
     Type: BaseDataVariableType
     DataType: DateTime
     Children:
     - Name: DynamicLink
+      Id: g=ece5c26d8b9a310620d4ff74baa78212
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/DataOra"
       Children:
       - Name: Mode
+        Id: g=93d208f3f1c3a1c62b27ad4817cb5cad
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: z_BW_DateTimeAck
+    Id: g=d73a18002eadef08d24399e58debfed5
     Type: BaseDataVariableType
     DataType: DateTime
     Children:
     - Name: DynamicLink
+      Id: g=3bb7343dc6b8372d251d8854c27c8f44
       Type: DynamicLink
       DataType: NodePath
       Value: "{VarPLC}/DataOraACK"
       Children:
       - Name: Mode
+        Id: g=cdfae7a15b8e7ed0e9c0dc4aa8f21783
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
         Value: 2
   - Name: AutoAcknowledge
+    Id: g=9972ea8c508f029274f531351f68b213
     Type: BaseDataVariableType
     DataType: Boolean
     ModellingRule: Optional
     Value: true
   - Name: AutoConfirm
+    Id: g=c6afcbab9ab41956c96bd4c4ff05e754
     Type: BaseDataVariableType
     DataType: Boolean
     ModellingRule: Optional
     Value: true
   - Name: VarPLC
+    Id: g=a03b760e66e0d38bc96f547a04e5dda6
     Type: Alias
     DataType: NodeId
     Children:
     - Name: Kind
+      Id: g=3fedbe0980456da44605bf2247732465
       Type: PropertyType
       DataType: NodeId
       Value: "/Objects/Test_BW/CommDrivers/CODESYSDriver1/CODESYSStation1/Tags/Application/PLC_PRG/MainQueue/0"
   - Class: Reference
     Type: GeneratesEvent
     Target: g=7dd423dad0b701b43f61b1297054b638
+  - Name: Message
+    Id: g=74dd4273022742b7a77887f6ef0a33a3
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Children:
+    - Name: DynamicLink
+      Id: g=5d055aeeb959fd931144e13441de872c
+      Type: DynamicLink
+      DataType: NodePath
+      Value: "../RuntimeNetLogic1/MessaggioCustom"
+      Children:
+      - Name: IsPull
+        Id: g=196dca97e6902f7616664f92e0312c52
+        Type: BaseVariableType
+        DataType: Boolean
+        ModellingRule: Optional
+        Value: true
+  - Name: RuntimeNetLogic1
+    Id: g=3a4e621ffca273d8425084eb04c99900
+    Type: NetLogic
+    Children:
+    - Class: Method
+      Name: SetMessage
+      Id: g=359026e0a787fd29069895c0a72eca8a
+      Children:
+      - Name: ns=0;InputArguments
+        Id: g=54307c4bbe7abcac161593d8feb5511e
+        Type: BaseVariableType
+        DataType: Argument
+        ReferenceType: HasProperty
+        ValueRank: OneDimension
+        ArrayDimensions: [0]
+        Value: [{"TypeId":{"Id":296},"Body":{"Name":"chiave","DataType":{"Id":12},"ValueRank":-1,"ArrayDimensions":[],"Description":{"NamespaceIndex":-1,"LocaleId":"","Text":""}}}]
+    - Name: MessaggioCustom
+      Id: g=e238e95877739af2bc156c491bdabead
+      Type: BaseDataVariableType
+      DataType: LocalizedText
+  - Name: CustomMessage
+    Id: g=4c3c8cd091621d10cd21ff17bf4e0748
+    Type: BaseDataVariableType
+    DataType: LocalizedText
+    Value: {"LocaleId":"en-US","Text":"0"}
+  - Name: z_BW_IDChanged
+    Id: g=9468279546e449937a529bde1ff4fb8f
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=2a9f23a7b5f09d95228fd906d3741e5a
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../z_BW_ID"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=c36154ed22a810d3735f226a545a25d4
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=339e2c3031141f36f55d08b169b020ef
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=3907a1cd13661eb84838b7b195a23f05
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=44338343b552049d6399633ebea42ae3
+          Type: BaseObjectType
+          Children:
+          - Name: ns=2;ObjectPointer
+            Id: g=189706f4987cd9904a2e2eb7d510e38c
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=da734566f9c5aef56c3decebf4aa2f20
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=004e2757ffac49a2dffe117430901488
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../RuntimeNetLogic1@NodeId"
+              Children:
+              - Name: Mode
+                Id: g=950c0b88c557facd7dfc2a51b7b5683c
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: ns=2;Method
+            Id: g=e8a760ced79e38e5817e2c640132b4e6
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "SetMessage"
+          - Name: InputArguments
+            Id: g=8e8afb138c3a71cf261daf7aa3d05e5d
+            Type: BaseObjectType
+            Children:
+            - Name: chiave
+              Id: g=9ceac87a1e4732af2d7b4873b4b5e584
+              Type: BaseDataVariableType
+              DataType: String
+              Children:
+              - Name: DynamicLink
+                Id: g=9f8c36bea84e90405ce7e861c8b68d02
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "../../../../../../z_BW_ID"
+      - Name: EventArguments
+        Id: g=8f100fefe4531597b616baeb00bc71bb
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=76c7144bf855b236dda7733a835ba485
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=510d9614912a1febffacc51ed76a0f84
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=0ebd9a08f9ae66dd37a5e6806157eda0
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=90ced4b8618d0a0bedfa4ed5e45e152e
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=bd0c1c0ca4fd6dea7e7c0a159ba10b38
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=b0bc563b5632ea9a69eca989e4287567
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=df22ab00349824a5177f29154ead9aa6
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=ae9827eb4375d8b1f7fa969fcd61bc44
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=0151cd121bcee179bde77fdc729cf8ea
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=b5ac5a05b8010d2a74207b9ed5d5bd21
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=d2ce6494a278ae006914648092d43e6c
+          Type: PropertyType
+          DataType: UInt16

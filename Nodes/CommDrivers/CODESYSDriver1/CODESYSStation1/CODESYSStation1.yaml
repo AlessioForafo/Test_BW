@@ -3,22 +3,27 @@ Id: g=fc936e25bd5e13917c04339e718ebb39
 Type: CODESYSStation
 Children:
 - Name: GatewayIP
+  Id: g=30ccfe4feec65f66a9155fa098d3372c
   Type: BaseDataVariableType
   DataType: String
   Value: "127.0.0.1"
 - Name: Port
+  Id: g=f47173ea26c30218e1315631e185699a
   Type: BaseDataVariableType
   DataType: UInt16
   Value: 1217
 - Name: PLCAddress
+  Id: g=4d42dc16f73c8ab6722f222935d25e98
   Type: BaseDataVariableType
   DataType: String
   Value: "127.0.0.1"
 - Name: Timeout
+  Id: g=e2b5bbe4bf82b7d28bc64a290f7bbe06
   Type: BaseDataVariableType
   DataType: Duration
   Value: "0:00:00:05.0000000"
 - Name: OperationCode
+  Id: g=cea027391d76bd857c66f82b80c3dd93
   Type: BaseDataVariableType
   DataType: CommunicationOperationCode
   AccessLevel: Read
@@ -42,6 +47,7 @@ Children:
   Direction: Forward
 - File: Tags/Tags.yaml
 - Name: Types
+  Id: g=14c495a63192b4be66aeeedc07db884e
   Type: FolderType
   Children:
   - File: DataTypes/DataTypes.yaml

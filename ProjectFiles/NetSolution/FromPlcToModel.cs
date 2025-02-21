@@ -7,6 +7,9 @@ using FTOptix.HMIProject;
 using FTOptix.NetLogic;
 using System.Linq;
 using UAManagedCore;
+using FTOptix.OPCUAServer;
+using FTOptix.Store;
+using FTOptix.SQLiteStore;
 
 #endregion
 

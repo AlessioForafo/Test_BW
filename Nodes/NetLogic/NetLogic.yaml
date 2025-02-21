@@ -1,39 +1,51 @@
 Name: NetLogic
+Id: g=6a45497018bb3f3dad5ffd877a66528e
 Type: NetLogicCategoryFolder
 Children:
 - Name: CreazioneAllarmi
+  Id: g=13e3649e64d35b1621750c5a21e54e38
   Type: NetLogic
   Children:
   - Name: BehaviourStartPriority
+    Id: g=1ef70cf63b39f031300d70e328aae02e
     Type: BehaviourStartPriorityVariableType
     DataType: Byte
     Value: 180
   - Class: Method
     Name: GeneraAllarmi
+    Id: g=a984218315970cb6342f9b7d8a7a9dd9
   - Class: Method
     Name: CancellaAllarmi
+    Id: g=e07e70db4c0647996a0bd93cb877599e
 - Name: FromPlcToModel
+  Id: g=683e9b7098d2460a0cdf8b3be0cdd4f6
   Type: NetLogic
   WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
   Children:
   - Name: BehaviourStartPriority
+    Id: g=cb0361a9e344c351a04fdefbdb49465c
     Type: BehaviourStartPriorityVariableType
     DataType: Byte
     Value: 180
   - Name: StartingNodeToFetch
+    Id: g=6dadbc543b74be9293cf074359f0b251
     Type: BaseDataVariableType
     DataType: NodeId
     Value: "/Objects/Test_BW/CommDrivers/CODESYSDriver1/CODESYSStation1/Tags/Application/PLC_PRG/MainQueue"
   - Class: Method
     Name: GenerateNodesIntoModel
+    Id: g=b646a3551a0be64c46e45cbbf4baeb9f
   - Name: TargetFolder
+    Id: g=ec033c3b673b1a670580db09c8d9a7bc
     Type: BaseDataVariableType
     DataType: NodeId
     Value: "/Objects/Test_BW/Model/IstanzeOggettiMainQueue"
   - Name: DeleteExistingTags
+    Id: g=3c1026382972b3754b652f525242a598
     Type: BaseDataVariableType
     DataType: Boolean
   - Name: ns=4;LibraryReference
+    Id: g=bcee147a30afef33f2cd61a9103301b9
     Type: ObjectLibraryReference
     DataType: ObjectLibraryReferenceDataType
     Value: 
@@ -50,4 +62,5 @@ Children:
       }
      }
 - Name: CreazioneAllarmiRuntime
+  Id: g=7c752f97fc515acd5f369062622dc5f3
   Type: NetLogic

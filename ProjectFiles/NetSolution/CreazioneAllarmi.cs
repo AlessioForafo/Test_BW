@@ -12,6 +12,9 @@ using FTOptix.NetLogic;
 using FTOptix.CODESYS;
 using FTOptix.CommunicationDriver;
 using FTOptix.Alarm;
+using FTOptix.OPCUAServer;
+using FTOptix.Store;
+using FTOptix.SQLiteStore;
 #endregion
 
 public class CreazioneAllarmi : BaseNetLogic

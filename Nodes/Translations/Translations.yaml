@@ -1,7 +1,9 @@
 Name: Translations
+Id: g=a64dafd26ad3d451bf5a8d880b84a8a8
 Type: TranslationsCategoryFolder
 Children:
 - Name: LocalizationDictionary1
+  Id: g=58acedd6b102e75e5f292aa2bc5bad4f
   Type: LocalizationDictionary
   DataType: String
   ValueRank: OneOrMoreDimensions
@@ -9,22 +11,24 @@ Children:
   Value: 
    {
     "Type": 12,
-    "Dimensions": [15,2],
+    "Dimensions": [17,3],
     "Body": [
-     "","en-US",
-     "Timestamp","Timestamp",
-     "TimedShelve","Timed Shelve",
-     "Acknowledge","Acknowledge",
-     "Acknowledge All","Acknowledge All",
-     "Active","Active",
-     "Confirm","Confirm",
-     "OneShotShelve","One-Shot Shelve",
-     "Confirm All","Confirm All",
-     "Name","Name",
-     "SourceName","Source Variable",
-     "Message","Message",
-     "Acked","Acked",
-     "Confirmed","Confirmed",
-     "Severity","Severity"
+     "","en-US","it-IT",
+     "Timestamp","Timestamp","",
+     "TimedShelve","Timed Shelve","",
+     "Acknowledge","Acknowledge","",
+     "Acknowledge All","Acknowledge All","",
+     "Active","Active","",
+     "Confirm","Confirm","",
+     "OneShotShelve","One-Shot Shelve","",
+     "Confirm All","Confirm All","",
+     "Name","Name","",
+     "SourceName","Source Variable","",
+     "Message","Message","",
+     "Acked","Acked","",
+     "Confirmed","Confirmed","",
+     "Severity","Severity","",
+     "123","Allarme 123 ENG","Allarme 123 ITA",
+     "456","Allarme 456 ENG","Allarme 456 ITA"
     ]
    }

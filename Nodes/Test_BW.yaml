@@ -1,56 +1,75 @@
 Name: Test_BW
+Id: g=be8e6af6b91bca3e28455c5bf796a563
 Type: ProjectFolder
 Children:
 - Name: Localization
+  Id: g=a322bfdb816dfba3c2931eeda6ce11a3
   Type: PropertyGroup
   Children:
   - Name: Locales
+    Id: g=ce8d94b4752288c0b9224ed12dfc25a9
     Type: BaseDataVariableType
     DataType: LocaleId
     ValueRank: OneDimension
     ArrayDimensions: [0]
-    Value: ["en-US"]
+    Value: ["en-US","it-IT"]
   - Name: LocaleFallbackList
+    Id: g=e104a34fec4b59c834db7567fa5c3333
     Type: BaseDataVariableType
     DataType: LocaleId
     ValueRank: OneDimension
     ArrayDimensions: [0]
     Value: ["en-US"]
 - Name: Authentication
+  Id: g=b7c53cc705b1a463d6447f3ba5973e95
   Type: PropertyGroup
   Children:
   - Name: DefaultUserFolder
+    Id: g=7ada1bdedf8eee02f5aa0bd5a1732a09
     Type: NodePointer
     DataType: NodeId
     Value: "/Objects/Test_BW/Security/Users"
     Children:
     - Name: Kind
+      Id: g=4507363423616745de05b823abbb5ba6
       Type: PropertyType
       DataType: NodeId
       Value: "/Types/ObjectTypes/BaseObjectType/FolderType"
 - Name: PasswordPolicy
+  Id: g=96f156a2d4cdb7a3f0c655f8fdaf5ed6
   Type: PasswordPolicy
   Children:
   - Name: MaximumPasswordAge
+    Id: g=1ac84af2930f19a21fde91e2f0408fbb
     Type: BaseDataVariableType
     DataType: UInt16
   - Name: EnforcePasswordHistory
+    Id: g=9d65b49ee0c3d590061967c0af62997b
     Type: BaseDataVariableType
     DataType: Byte
     Value: 1
   - Name: MinimumPasswordAge
+    Id: g=e868bae8c033a2e51dccf5f69c523653
     Type: BaseDataVariableType
     DataType: UInt16
   - Name: MinimumPasswordLength
+    Id: g=6309b60c41c41060e898b5811223a8a1
     Type: BaseDataVariableType
     DataType: Byte
     Value: 8
 - Name: AlarmConfiguration
+  Id: g=36b9354f7f17e638a979fc8f457b666a
   Type: PropertyGroup
   Children:
   - Name: AlarmsCollectionEnabled
+    Id: g=e71e2780ff13eccba34e52d59a2cee0f
     Type: BaseDataVariableType
     DataType: Boolean
+  - Name: BranchingEnabled
+    Id: g=113dc38f6355f3fda84c088057de3311
+    Type: BaseDataVariableType
+    DataType: Boolean
+    Value: true
 - File: UI/UI.yaml
 - File: Model/Model.yaml
 - File: Converters/Converters.yaml
