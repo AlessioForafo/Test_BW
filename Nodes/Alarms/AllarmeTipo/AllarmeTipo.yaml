@@ -47,16 +47,15 @@ Children:
     Id: g=5806481e492f6995002e42adc263bc21
     Type: BaseDataVariableType
     DataType: Double
-    Value: 1.0
     Children:
     - Name: DynamicLink
-      Id: g=b665d65d2cd383f91015a3e383d96395
+      Id: g=f434950efdf6b41c448a87e5a96c1e7a
       Type: DynamicLink
       DataType: NodePath
-      Value: "{VarPLC}/ToAcknowledge"
+      Value: "../RuntimeNetLogic1/AttivaAllarme"
       Children:
       - Name: Mode
-        Id: g=d2216806efa8b6cde3b060c1efad4d43
+        Id: g=b9266924fb552cfde79c46df624d199c
         Type: BaseVariableType
         DataType: DynamicLinkMode
         ModellingRule: Optional
@@ -248,6 +247,13 @@ Children:
       Id: g=e238e95877739af2bc156c491bdabead
       Type: BaseDataVariableType
       DataType: LocalizedText
+    - Name: AttivaAllarme
+      Id: g=183f21de6b3bbe7320b5cf4183248f09
+      Type: BaseDataVariableType
+      DataType: Boolean
+    - Class: Method
+      Name: attivaAllarme
+      Id: g=659c065eb85e53ce77fc04718badc24a
   - Name: CustomMessage
     Id: g=4c3c8cd091621d10cd21ff17bf4e0748
     Type: BaseDataVariableType
@@ -366,5 +372,106 @@ Children:
           DataType: LocalizedText
         - Name: Severity
           Id: g=d2ce6494a278ae006914648092d43e6c
+          Type: PropertyType
+          DataType: UInt16
+  - Name: z_BW_ToAckChanged
+    Id: g=abeda0239222ca52f8b7a23073a110f0
+    Type: VariableChangedEventDispatcher
+    Children:
+    - Name: VariableNodePath
+      Id: g=f21ce6e6048dd36ec25e0ad7f694013e
+      Type: BaseVariableType
+      DataType: NodePath
+      Value: "../z_BW_ToAck"
+    - Name: VariableValueChangedEventHandler1
+      Id: g=ade04a3a44ebc1266c7f1b949cd9d57f
+      Type: EventHandler
+      Children:
+      - Name: ListenEventType
+        Id: g=d8d9e35289a96344ad9ebf7181f875b2
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/EventTypes/BaseEventType/VariableConditionEvent/VariableValueChangedEvent"
+      - Name: MethodsToCall
+        Id: g=092480424467241754b432007f0c9349
+        Type: BaseObjectType
+        Children:
+        - Name: MethodContainer1
+          Id: g=39f6eb151c86ed0521cdf4e60596125c
+          Type: BaseObjectType
+          Children:
+          - Name: ns=2;ObjectPointer
+            Id: g=cf2bc789b49ab872c613e2827ece989e
+            Type: NodePointer
+            DataType: NodeId
+            Children:
+            - Name: Kind
+              Id: g=877885672492bd473a89d252d8e21244
+              Type: PropertyType
+              DataType: NodeId
+              Value: "/Types/ObjectTypes/BaseObjectType"
+            - Name: DynamicLink
+              Id: g=86ebb927e7e9522bf7566be5bd9eb33f
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "../../../../../RuntimeNetLogic1@NodeId"
+              Children:
+              - Name: Mode
+                Id: g=a6b08ff7316f352342248b02c27187cc
+                Type: BaseVariableType
+                DataType: DynamicLinkMode
+                ModellingRule: Optional
+                Value: 2
+          - Name: ns=2;Method
+            Id: g=b45349e0163f4da5e89b9f67d4541b61
+            Type: BaseDataVariableType
+            DataType: String
+            Value: "attivaAllarme"
+      - Name: EventArguments
+        Id: g=cd12abd2300ec24a9b817fa77eaee325
+        Type: VariableValueChangedEvent
+        Children:
+        - Name: VariableNodeId
+          Id: g=97da613be6e80aefa39a425e5170430d
+          Type: BaseVariableType
+          DataType: NodeId
+        - Name: NewValue
+          Id: g=184d61d335d4e12fc22d239938676ed5
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: OldValue
+          Id: g=6327c4c6d95b93db782ab2f2965cb106
+          Type: BaseVariableType
+          DataType: BaseDataType
+        - Name: EventId
+          Id: g=4291cf4076f4e8487bba6b533d6a0653
+          Type: PropertyType
+          DataType: ByteString
+        - Name: EventType
+          Id: g=fce768c3d29cb2af252fefd5dd5f882b
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceNode
+          Id: g=9ca9c6c0429f0eb324affdffbc408255
+          Type: PropertyType
+          DataType: NodeId
+        - Name: SourceName
+          Id: g=77717f6751fd0bfe844981f4c16b837e
+          Type: PropertyType
+          DataType: String
+        - Name: Time
+          Id: g=9219db727d8143dd631b99dfe2e79f0e
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: ReceiveTime
+          Id: g=a9700b71d39d3b076567280a44fb770c
+          Type: PropertyType
+          DataType: UtcTime
+        - Name: Message
+          Id: g=7442107917436cefe537f0796c104a23
+          Type: PropertyType
+          DataType: LocalizedText
+        - Name: Severity
+          Id: g=9673e0e36b7b9e9a391261b22e0d4b33
           Type: PropertyType
           DataType: UInt16

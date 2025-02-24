@@ -20,16 +20,17 @@ using FTOptix.SQLiteStore;
 public class RuntimeNetLogic1 : BaseNetLogic
 {
     private DigitalAlarm allarme;
+    private DelayedTask myDelayedTask;
 
     public override void Start()
     {
         // Insert code to be executed when the user-defined logic is started
         //allarme = (DigitalAlarm)Owner;
-        
+
         //allarme.GetVariable("z_BW_ID").VariableChange += InputValueVariable_VariableChange;
         //allarme.LocalizedMessage = allarme.GetVariable("z_BW_ID").Value;
         //SetMessage();
-        
+
     }
 
     //private void InputValueVariable_VariableChange(object sender, VariableChangeEventArgs e)
@@ -37,20 +38,38 @@ public class RuntimeNetLogic1 : BaseNetLogic
     //    SetMessage();
     //}
 
-    public override void Stop()
-    {
-        // Insert code to be executed when the user-defined logic is stopped
-        //allarme.GetVariable("z_BW_ID").VariableChange -= InputValueVariable_VariableChange;
-    }
+
 
     [ExportMethod]
     public void SetMessage(string chiave)
     {
         var messaggioAllarme = new LocalizedText(chiave);
-        
+
         if (InformationModel.LookupTranslation(messaggioAllarme).HasTranslation)
         {
             LogicObject.GetVariable("MessaggioCustom").Value = messaggioAllarme;
         }
+    }
+
+    [ExportMethod]
+    public void attivaAllarme()
+    {
+        if (LogicObject.GetVariable("AttivaAllarme").Value == true)
+            LogicObject.GetVariable("AttivaAllarme").Value = false;
+        else
+        {
+            myDelayedTask = new DelayedTask(attiva_Allarme, 100, LogicObject);
+            myDelayedTask.Start();
+        }     
+    }
+
+    public override void Stop()
+    {
+        myDelayedTask?.Dispose();
+    }
+
+    private void attiva_Allarme()
+    {
+        LogicObject.GetVariable("AttivaAllarme").Value = !(LogicObject.GetVariable("AttivaAllarme").Value);
     }
 }
