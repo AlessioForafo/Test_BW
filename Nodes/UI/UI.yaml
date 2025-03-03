@@ -338,48 +338,10 @@ Children:
           Id: g=e3679b66aaf46912b619295a1cfce966
           Type: NodePointer
           DataType: NodeId
-          Value: "/Objects/Test_BW/UI/Screens/StoricoAllarmi"
+          Value: "/Objects/Test_BW/UI/Screens/StoricoAllarmi_OK"
           Children:
           - Name: Kind
             Id: g=9b0b8d5da5b36b5da1c01f98188d99c4
-            Type: PropertyType
-            DataType: NodeId
-            Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
-      - Name: Panel3
-        Id: g=82b86e17c3f87270610483e4b4ff69ef
-        Type: NavigationPanelItem
-        Children:
-        - Name: Title
-          Id: g=4e015b8eff1b61d63f67b07ff784797f
-          Type: BaseDataVariableType
-          DataType: LocalizedText
-        - Name: Panel
-          Id: g=ccdb89e1d859502344c897e54c72b925
-          Type: NodePointer
-          DataType: NodeId
-          Value: "/Objects/Test_BW/UI/Screens/Screen2"
-          Children:
-          - Name: Kind
-            Id: g=fb81dda1bee298db7c320fbcec755833
-            Type: PropertyType
-            DataType: NodeId
-            Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"
-      - Name: Panel4
-        Id: g=04ba743fd9869281435fc42ac0e34c45
-        Type: NavigationPanelItem
-        Children:
-        - Name: Title
-          Id: g=f959df33577e480b94e9f8d5d5e7d8f2
-          Type: BaseDataVariableType
-          DataType: LocalizedText
-        - Name: Panel
-          Id: g=a79d2ccd0240cdbcca1549af841899dd
-          Type: NodePointer
-          DataType: NodeId
-          Value: "/Objects/Test_BW/UI/Screens/Screen3"
-          Children:
-          - Name: Kind
-            Id: g=429e4960dbf6e744de8d9abbb78d3c43
             Type: PropertyType
             DataType: NodeId
             Value: "/Types/ObjectTypes/BaseObjectType/BaseUIObject/Item/Container"

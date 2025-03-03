@@ -15,6 +15,8 @@ using FTOptix.CommunicationDriver;
 using FTOptix.Core;
 using FTOptix.Store;
 using FTOptix.SQLiteStore;
+using FTOptix.Report;
+using FTOptix.EventLogger;
 #endregion
 
 public class DatGridLocalization : BaseNetLogic

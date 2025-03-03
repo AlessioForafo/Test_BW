@@ -15,6 +15,8 @@ using FTOptix.Core;
 using FTOptix.OPCUAServer;
 using FTOptix.Store;
 using FTOptix.SQLiteStore;
+using FTOptix.Report;
+using FTOptix.EventLogger;
 #endregion
 
 public class CreazioneAllarmiRuntime : BaseNetLogic

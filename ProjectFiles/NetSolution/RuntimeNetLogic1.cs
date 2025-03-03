@@ -15,30 +15,39 @@ using FTOptix.Core;
 using FTOptix.OPCUAServer;
 using FTOptix.Store;
 using FTOptix.SQLiteStore;
+using FTOptix.Report;
+using FTOptix.EventLogger;
 #endregion
 
 public class RuntimeNetLogic1 : BaseNetLogic
 {
-    private DigitalAlarm allarme;
+    //private DigitalAlarm allarme;
     private DelayedTask myDelayedTask;
-
+    
     public override void Start()
     {
         // Insert code to be executed when the user-defined logic is started
         //allarme = (DigitalAlarm)Owner;
 
         //allarme.GetVariable("z_BW_ID").VariableChange += InputValueVariable_VariableChange;
+        //allarme.GetVariable("z_BW_ToAck").VariableChange += InputValueVariable1_VariableChange;
+        //variableSynchronizer = new RemoteVariableSynchronizer();
+        //variableSynchronizer.Add(allarme.GetVariable("z_BW_ID"));
+        //variableSynchronizer.Add(allarme.GetVariable("z_BW_ToAck"));
         //allarme.LocalizedMessage = allarme.GetVariable("z_BW_ID").Value;
         //SetMessage();
 
     }
 
-    //private void InputValueVariable_VariableChange(object sender, VariableChangeEventArgs e)
-    //{
-    //    SetMessage();
-    //}
+    private void InputValueVariable_VariableChange(object sender, VariableChangeEventArgs e)
+    {
+        attivaAllarme();
+    }
 
-
+    private void InputValueVariable1_VariableChange(object sender, VariableChangeEventArgs e)
+    {
+        SetMessage(e.NewValue);
+    }
 
     [ExportMethod]
     public void SetMessage(string chiave)

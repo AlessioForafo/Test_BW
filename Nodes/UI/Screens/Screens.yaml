@@ -821,7 +821,7 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 40.0
-- Name: StoricoAllarmi
+- Name: StoricoAllarmi_model
   Id: g=0283709f921af0f580e69c7505368265
   Supertype: Screen
   ReferenceType: HasComponent
@@ -1551,7 +1551,775 @@ Children:
       DataType: Size
       ModellingRule: Optional
       Value: 10.0
-- Name: Screen3
+- Name: StoricoAllarmi_OK
   Id: g=cf450b5cd67502fc30be17177252e7a0
   Supertype: Screen
   ReferenceType: HasComponent
+  Children:
+  - Name: AlarmHistoryGrid1
+    Id: g=ad0c9e6667abc19519999f931d265c18
+    Type: DataGrid
+    WriteMask: BrowseName|DataType|Description|DisplayName|MinimumSamplingInterval|UserAccessLevel
+    Children:
+    - Class: Reference
+      Target: ns=3;i=504
+      Direction: Forward
+    - Name: Model
+      Id: g=f920ba344a2e17cc40315645e35e1792
+      Type: NodePointer
+      DataType: NodeId
+      Value: {"IdType":2,"Id":"523a4b17b1ac1c598fac5c9ac2a39c2e","Namespace":7}
+      Children:
+      - Name: ItemKind
+        Id: g=c78b02320786ab4998c89ac25cea4ed1
+        Type: PropertyType
+        DataType: NodeId
+      - Name: Kind
+        Id: g=187d268530ac172ca4edddb76f259d7f
+        Type: PropertyType
+        DataType: NodeId
+      - Name: DynamicLink
+        Id: g=b737cbc6fc4f63c99afd0fedd61bb66e
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "{AlarmEventsLogger}/Store@NodeId"
+    - Name: Query
+      Id: g=db0aef72d601f5a2251d43495f2df706
+      Type: BaseDataVariableType
+      DataType: String
+      Children:
+      - Name: StringFormatter1
+        Id: g=bb1199a166832b6d7cbadfb5017f7085
+        Type: StringFormatter
+        Children:
+        - Name: Format
+          Id: g=323bb77d596013c26e8ca6159c7b867f
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          ReferenceType: HasParameter
+          ModellingRule: Optional
+          Value: {"LocaleId":"en-US","Text":"SELECT ActiveState_Id, EnabledState_Id, AckedState_Id, ConfirmedState_Id, ConditionName, SourceName, {1:sql_identifier} AS Message, Severity, LocalTime FROM {0:sql_identifier} ORDER BY LocalTime DESC"}
+        - Name: Source0
+          Id: g=a18832d7a79700b785b090364a728617
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: CollegamentoDinamico
+            Id: g=92fa6708458d9f482e1c03a15d2dd7a5
+            Type: DynamicLink
+            DataType: NodePath
+            Value: "{AlarmEventsLogger}@BrowseName"
+            Children:
+            - Name: Mode
+              Id: g=28e54d6dde6a3f68883f0a1241778726
+              Type: BaseVariableType
+              DataType: DynamicLinkMode
+        - Name: Source1
+          Id: g=3a7be45baa5c8d0fa7fa44979d63ce92
+          Type: BaseDataVariableType
+          DataType: BaseDataType
+          ReferenceType: HasSource
+          Children:
+          - Name: StringFormatter1
+            Id: g=ca077845b7d2d90a0b91d9c44d4c82ea
+            Type: StringFormatter
+            Children:
+            - Name: Format
+              Id: g=9a9098185a1c3d2feac2022940a45acd
+              Type: BaseDataVariableType
+              DataType: LocalizedText
+              ReferenceType: HasParameter
+              ModellingRule: Optional
+              Value: {"LocaleId":"it-IT","Text":"Message_{0}"}
+            - Name: Source0
+              Id: g=8ab4a8f51345b90667442c913fb9a8e4
+              Type: BaseDataVariableType
+              DataType: BaseDataType
+              ReferenceType: HasSource
+              Children:
+              - Name: DynamicLink
+                Id: g=9f3a7ab9ee5a084cb818224d7c9df662
+                Type: DynamicLink
+                DataType: NodePath
+                Value: "{Session}/ActualLanguage"
+                Children:
+                - Name: Mode
+                  Id: g=77204f5cce52444e4c059f30dcb48d12
+                  Type: BaseVariableType
+                  DataType: DynamicLinkMode
+            - Name: Mode
+              Id: g=a6c4e3b1f339cc74fa605b26a87f920d
+              Type: PropertyType
+              DataType: DynamicLinkMode
+              ReferenceType: HasComponent
+    - Name: Columns
+      Id: g=19381035a384e97615ef8e347ea86e74
+      Type: BaseObjectType
+      Children:
+      - Name: Timestamp
+        Id: g=9dfdae8049cf32ea43eb40c71efcb5c5
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=3a0444f6776a3150e0f3037c038f2208
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"Timestamp"}
+        - Name: Width
+          Id: g=56447f07f73fc92039efb19cc3962c0b
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 200.0
+        - Name: HeaderAlignment
+          Id: g=a3be33fe8a1977b57a6f446676191106
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+        - Name: ContentAlignment
+          Id: g=3e4608dd332c5bf203130a69bb6a1a2a
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+        - Name: OrderBy
+          Id: g=fcb08e3284ce0789325d197184a470d2
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/LocalTime"
+        - Name: DataItemTemplate
+          Id: g=0a0a9a0e61a88ea529362594b29ff02c
+          Type: DataGridLabelItemTemplate
+          Children:
+          - Name: Text
+            Id: g=31aff8d00db3490261d247b0f1c5cf2b
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Id: g=0210ed4d61fae1539f251c28b3417e98
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Item}/LocalTime"
+        - Name: Visible
+          Id: g=d54852a95272538b253f4ed0a2c2b480
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+      - Name: Name
+        Id: g=33411e192855dca62e675ebd6a66b60a
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=4261de99f2cfea873c60ee1bba96143e
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"Name"}
+        - Name: Width
+          Id: g=2de39b76c9bdfea1aa01d399cb461832
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 150.0
+        - Name: HeaderAlignment
+          Id: g=1f262bd9bd891c3400e273d4c4e11776
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+        - Name: ContentAlignment
+          Id: g=8f9b04222037a02f98940874fede69c5
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+        - Name: OrderBy
+          Id: g=b34e94e92630f8c00e4d32c148383ef9
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/ConditionName"
+        - Name: DataItemTemplate
+          Id: g=75cf7937705d0df15b85e60b299dffb9
+          Type: DataGridLabelItemTemplate
+          Children:
+          - Name: Text
+            Id: g=f30f427c7b69d208e8225f9e0b00c85b
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Id: g=a7d5fc481d490728f3278b8bef673a32
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Item}/ConditionName"
+        - Name: Visible
+          Id: g=13bd10532349bc6dc5d77e3bc0c89f24
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+      - Name: SourceName
+        Id: g=27881e917db2bee13c6357d688eb0aa1
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=0edf3237779036e987f9d419d6e5928c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"SourceName"}
+        - Name: Width
+          Id: g=745bda83c90e1593e83eb058abed4a0e
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 150.0
+        - Name: HeaderAlignment
+          Id: g=1c5238016c60e7acd8a6c0af44fb3374
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+        - Name: ContentAlignment
+          Id: g=3f59ce6f6156eeb414f0a0a0d9ec85f1
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+        - Name: OrderBy
+          Id: g=f2b3606f92d700b717d107eb9ebcf7df
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/SourceName"
+        - Name: DataItemTemplate
+          Id: g=f5db9d1450adc0fc76c3d1b7282dd229
+          Type: DataGridLabelItemTemplate
+          Children:
+          - Name: Text
+            Id: g=010cc145b4e944057b65f199b84af29f
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Id: g=aaaf2b7da8cc7060b5dd97cf713c5c1b
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Item}/SourceName"
+        - Name: Visible
+          Id: g=c2eb93924dedf458b2a6257669c0d903
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+      - Name: Message
+        Id: g=6a7213fbef1a92b5723ffed1166aee1f
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=8d4a0839e91663a7d9a9453e54edd2b1
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"Message"}
+        - Name: Width
+          Id: g=64af19de455b41702e79b38aaf8ba109
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: -1.0
+        - Name: HeaderAlignment
+          Id: g=a4e75a82cc176b5fee7feb2de7c3b942
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+          Value: 1
+        - Name: ContentAlignment
+          Id: g=0bf1d6f334df46db1edfd7746f840b70
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+        - Name: OrderBy
+          Id: g=58d682300c2fc0561ca0344f026d63f9
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/Message"
+        - Name: DataItemTemplate
+          Id: g=371abb4f23923ae92f5e29f9aca6aa6a
+          Type: DataGridLabelItemTemplate
+          Children:
+          - Name: Text
+            Id: g=97ae5980c1cd50534a962e2d06019e56
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: DynamicLink
+              Id: g=9422c329e4af57a5e78a25b4048423a5
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Item}/Message"
+        - Name: Visible
+          Id: g=257a8fa14cadf0ee3c09c6dc79453a6a
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+      - Name: Active
+        Id: g=8e8d02ade02c207ba7c7ee432220e37c
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=ee1f4315de4312dd672de65b7b1d689c
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"Active"}
+        - Name: Width
+          Id: g=6be25949e912e578b02a1f7c59c46350
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 80.0
+        - Name: HeaderAlignment
+          Id: g=824023dcc68f672a839925970ef5731a
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+          Value: 1
+        - Name: ContentAlignment
+          Id: g=d83d77a69bcfae930fb339464c13e334
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          Value: 2
+        - Name: OrderBy
+          Id: g=067f96806d02080ba83bc85df88d1fcc
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/ActiveState_Id"
+        - Name: DataItemTemplate
+          Id: g=b4010ca8d299e7ae7b6fbc7c303c7535
+          Type: DataGridImageItemTemplate
+          Children:
+          - Name: Path
+            Id: g=801a2cc2019fd48f45d6e310d1af6bd6
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Children:
+            - Name: KeyValueConverter1
+              Id: g=9f6f6fa0f3aa1ca0d6b5c9e3de0da71f
+              Type: ValueMapConverter
+              Children:
+              - Name: Source
+                Id: g=7a33396a43479d2fc4f224a94c8097c6
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=9b520af574c9e84354c56fbec55b364d
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{Item}/ActiveState_Id"
+                  Children:
+                  - Name: Mode
+                    Id: g=6de6567f0a096ef72a8e0fd07335e395
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    ModellingRule: Optional
+                    Value: 2
+              - Name: ns=2;Pairs
+                Id: g=2ea240fb3c54ae70785d5137d9e20bb0
+                Type: BaseObjectType
+                Children:
+                - Name: Pair
+                  Id: g=61e9bc1d696b06aba50aa85d79b3100b
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=4339cc6e3c852b1587df26f2972df668
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                    Value: true
+                  - Name: Value
+                    Id: g=203119cb55def132b7b31a352b58a751
+                    Type: BaseDataVariableType
+                    DataType: ResourceUri
+                    Value: "ns=7;%PROJECTDIR%/RadiobuttonDark.svg"
+                - Name: Pair1
+                  Id: g=5cfdbf4c4720df6dc98bbc2762c36d92
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=8b9dbcf44f4444f3a873be0998404efd
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                  - Name: Value
+                    Id: g=642274e88dea4405ea4c442c62400586
+                    Type: BaseDataVariableType
+                    DataType: ResourceUri
+                    Value: "ns=7;%PROJECTDIR%/RadiobuttonDarkEmpty.svg"
+          - Name: Width
+            Id: g=c5ad9c437ebccbf35881572da0127a2b
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: 16.0
+          - Name: Height
+            Id: g=4ff7a9208728f78e020b4b61f8cf80b2
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: 16.0
+        - Name: Visible
+          Id: g=2c58ca6a7c22bc2e388ee01d5346e147
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+      - Name: Acknowledged
+        Id: g=418322fb9e6379cb4af8c111a8b3e20a
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=243b05cfbc058b5eae5372297e73e9ea
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"Acked"}
+        - Name: Width
+          Id: g=0db51dae9da7ff26fad4b566e242851f
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 80.0
+        - Name: HeaderAlignment
+          Id: g=13824a1f314f9c1bbb12447d19361b59
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+          Value: 1
+        - Name: ContentAlignment
+          Id: g=e6118621f6e705d02c09aa65d6aa4e23
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          Value: 2
+        - Name: OrderBy
+          Id: g=88c9334f5a3087e0ed0d97c2c4af0cd9
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/AckedState_Id"
+        - Name: DataItemTemplate
+          Id: g=e41eabe3e1931232309506b516b09edd
+          Type: DataGridImageItemTemplate
+          Children:
+          - Name: Path
+            Id: g=6f020b65a87c203e247cd2f81d21ef3e
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Children:
+            - Name: KeyValueConverter1
+              Id: g=9ca8184f3507faefc0b040cade54f647
+              Type: ValueMapConverter
+              Children:
+              - Name: Source
+                Id: g=b9930965198a7d4191295391b5e92dd9
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=adecc0623570d8182ae545e6947b220e
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{Item}/AckedState_Id"
+                  Children:
+                  - Name: Mode
+                    Id: g=4fd8840d21722937970a10ab5a9bff25
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    ModellingRule: Optional
+                    Value: 2
+              - Name: ns=2;Pairs
+                Id: g=f5c7972366f23e73b1e04aeaaa7faa96
+                Type: BaseObjectType
+                Children:
+                - Name: Pair
+                  Id: g=be5507654745978c8bdffebbd2a61693
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=79b9d7d7ae68809a3176a1aecfb6f3b9
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                    Value: true
+                  - Name: Value
+                    Id: g=ad078b858a6c9e5e777529dfa5a745ca
+                    Type: BaseDataVariableType
+                    DataType: ResourceUri
+                    Value: "ns=7;%PROJECTDIR%/ApplyDark.png"
+                - Name: Pair1
+                  Id: g=a80beb39196c3d39b82ee7980a2e8611
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=a55324425be8876fc995d40720e88322
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                  - Name: Value
+                    Id: g=acd975fb92dd7fcc6ec179a206db9c88
+                    Type: BaseDataVariableType
+                    DataType: ResourceUri
+                    Value: "ns=7;%PROJECTDIR%/CloseDark.png"
+          - Name: Width
+            Id: g=37044e9aa69c047afcaa0bbdd2c8167c
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: 15.0
+          - Name: Height
+            Id: g=2cf7abe03dd86f6a7091d5b9bbd196b8
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: 15.0
+        - Name: Visible
+          Id: g=3f8f7614f9a3e223a78652220203cf87
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+      - Name: Confirmed
+        Id: g=3342cdf1dc209955c544871d0617a54b
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=9ad059768b2878387f779a07f8a851d4
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"Confirmed"}
+        - Name: Width
+          Id: g=a12776a6b2eaa6fe51535e8ff4efa7de
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 80.0
+        - Name: HeaderAlignment
+          Id: g=98fc8af9f9e3924c3403f92fdf40bba3
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+          Value: 1
+        - Name: ContentAlignment
+          Id: g=a988bfe57f7c32e1e388d910fc074ce0
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          Value: 2
+        - Name: OrderBy
+          Id: g=ce9a8b7fa1e85f6e19566d57d54a9f52
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/ConfirmedState_Id"
+        - Name: DataItemTemplate
+          Id: g=a5903d872f4abe922afa47d523c04276
+          Type: DataGridImageItemTemplate
+          Children:
+          - Name: Path
+            Id: g=8937f40d19cde705e2e127e83004db4d
+            Type: BaseDataVariableType
+            DataType: ResourceUri
+            Children:
+            - Name: KeyValueConverter1
+              Id: g=c07ed830cf9b89315d317dc835a237b4
+              Type: ValueMapConverter
+              Children:
+              - Name: Source
+                Id: g=5496017061135fb15f8082815c4981ce
+                Type: BaseDataVariableType
+                DataType: BaseDataType
+                ReferenceType: HasSource
+                Children:
+                - Name: DynamicLink
+                  Id: g=ad6a8c3d9acc06215b6ef96daa3f38d7
+                  Type: DynamicLink
+                  DataType: NodePath
+                  Value: "{Item}/ConfirmedState_Id"
+                  Children:
+                  - Name: Mode
+                    Id: g=a236a3c0dbab6d8388eb0d4ff7f8db28
+                    Type: BaseVariableType
+                    DataType: DynamicLinkMode
+                    ModellingRule: Optional
+                    Value: 2
+              - Name: ns=2;Pairs
+                Id: g=e52dc938b92fc9084beb7f565f774c44
+                Type: BaseObjectType
+                Children:
+                - Name: Pair
+                  Id: g=c4c1a6d089e229e637361bd4a6b28a72
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=4568a78ab21ae9a23e66073040b1d8e1
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                    Value: true
+                  - Name: Value
+                    Id: g=4292c743cde2c940561bdfc6d29eda36
+                    Type: BaseDataVariableType
+                    DataType: ResourceUri
+                    Value: "ns=7;%PROJECTDIR%/ApplyDark.png"
+                - Name: Pair1
+                  Id: g=1c0afe538d9789504d20ed3b6a12e351
+                  Type: ValueMapPair
+                  Children:
+                  - Name: Key
+                    Id: g=3114ef711a02db44a6ae8cca82541f7f
+                    Type: BaseDataVariableType
+                    DataType: Boolean
+                  - Name: Value
+                    Id: g=e813b7bb14edf493d8ff0b72c2959ee0
+                    Type: BaseDataVariableType
+                    DataType: ResourceUri
+                    Value: "ns=7;%PROJECTDIR%/CloseDark.png"
+          - Name: Width
+            Id: g=0071330ccb27bcf82ea859f5b0a463e8
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: 15.0
+          - Name: Height
+            Id: g=60609743ed0a41e2bc0f32eef771d74a
+            Type: BaseDataVariableType
+            DataType: Size
+            Value: 15.0
+        - Name: Visible
+          Id: g=cfd0148938cae392508749bd3b1a09e2
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+      - Name: Severity
+        Id: g=da0f2c9c181990419e0ef20f3ebd556c
+        Type: DataGridColumn
+        Children:
+        - Name: Title
+          Id: g=6853fec3ce5e7a3a7bff637f78dd87c7
+          Type: BaseDataVariableType
+          DataType: LocalizedText
+          Value: {"NamespaceIndex":7,"TextId":"Severity"}
+        - Name: Width
+          Id: g=fa60cacc78e7ff61ab70a12cc80bce2a
+          Type: BaseDataVariableType
+          DataType: Size
+          Value: 80.0
+        - Name: HeaderAlignment
+          Id: g=6b8d0d113aa134e8880eda3c022593c2
+          Type: BaseDataVariableType
+          DataType: TextHorizontalAlignment
+          Value: 2
+        - Name: ContentAlignment
+          Id: g=e8e9485d85bbc37e85e72a7795a7feb8
+          Type: BaseVariableType
+          DataType: HorizontalAlignment
+          Value: 1
+        - Name: OrderBy
+          Id: g=7ad43ae29bd87aa13ffc3fc348081f1a
+          Type: BaseDataVariableType
+          DataType: NodePath
+          Value: "{Item}/Severity"
+        - Name: DataItemTemplate
+          Id: g=41be7795e3102541dbabb174aa0cea03
+          Type: DataGridLabelItemTemplate
+          Children:
+          - Name: Text
+            Id: g=dd0c3175b5608741a10132708f038f65
+            Type: BaseDataVariableType
+            DataType: LocalizedText
+            Children:
+            - Name: CollegamentoDinamico
+              Id: g=dd33bb197d3df77548cf79b817c395e5
+              Type: DynamicLink
+              DataType: NodePath
+              Value: "{Item}/Severity"
+        - Name: Visible
+          Id: g=b2e7a5922b87298b75c635675b50cd5c
+          Type: BaseDataVariableType
+          DataType: Boolean
+          Value: true
+    - Name: SelectedItem
+      Id: g=6a34bee605a9251e2d71f3dfc2e112af
+      Type: NodePointer
+      DataType: NodeId
+      Children:
+      - Name: Kind
+        Id: g=43d6b7abb8f0cafccf34cd9298e50c41
+        Type: PropertyType
+        DataType: NodeId
+    - Name: Width
+      Id: g=4a470b23e5892aba7de2f5036418bdec
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 1155.0
+    - Name: Height
+      Id: g=ebfd37c0f1ef77417ffa275147d6cef0
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 360.0
+    - Name: AlarmEventsLogger
+      Id: g=36e633002ca0daabe0b3d8ad70b68ac1
+      Type: Alias
+      DataType: NodeId
+      Value: "/Objects/Test_BW/Loggers/AlarmsEventLogger1"
+      Children:
+      - Name: Kind
+        Id: g=dc6ff41c8f169b53e3399bed1fe94c4c
+        Type: PropertyType
+        DataType: NodeId
+        Value: "/Types/ObjectTypes/BaseObjectType/EventLogger"
+    - Name: SortOrder
+      Id: g=54a7e2b68a980f5aec1935b8b8bf07dc
+      Type: BaseDataVariableType
+      DataType: SortOrderEnum
+      ModellingRule: Optional
+      Value: 1
+    - Name: HorizontalAlignment
+      Id: g=1d047040d0cbcbe66194a7989853f32e
+      Type: BaseVariableType
+      DataType: HorizontalAlignment
+      ModellingRule: Optional
+      Value: 3
+    - Name: VerticalAlignment
+      Id: g=db6d37152cc641af933a9c0d52969e5d
+      Type: BaseVariableType
+      DataType: VerticalAlignment
+      ModellingRule: Optional
+    - Name: Item
+      Id: g=21e815d69f102b2b636430b209046d2e
+      Type: Alias
+      DataType: NodeId
+      Children:
+      - Name: Kind
+        Id: g=6625f3b70ca05444305b1f40ba9fdf4f
+        Type: PropertyType
+        DataType: NodeId
+    - Name: SortColumn
+      Id: g=ccd309fbaffc7dfd849ba8ed373f8e5f
+      Type: BaseDataVariableType
+      DataType: NodeId
+      Children:
+      - Name: CollegamentoDinamico
+        Id: g=2f795f5326379ce0e2573a3fb6e7c7ea
+        Type: DynamicLink
+        DataType: NodePath
+        Value: "../Columns/Timestamp@NodeId"
+    - Name: UISelectedItem
+      Id: g=40d6e7a61b081fd1c2c14dba5782d6f0
+      Type: BaseDataVariableType
+      DataType: NodeId
+      AccessLevel: Read
+    - Name: ns=4;LibraryReference
+      Id: g=ff4286a245f9414a0d3774228c600912
+      Type: ObjectLibraryReference
+      DataType: ObjectLibraryReferenceDataType
+      ModellingRule: None
+      Value: 
+       {
+        "TypeId": {
+         "Id": 72,
+         "Namespace": 4
+        },
+        "Body": {
+         "libraryGuid": "de905a58759b4ff38bbb66c9d44c67ad",
+         "objectGuid": "3cc1096bdeee27acfbb05030512a2442",
+         "objectVersion": 1,
+         "highestIgnoredVersion": 0
+        }
+       }
+    - Name: LeftMargin
+      Id: g=c954d014a3a06c5a5e8a8653ba9cefd0
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 15.0
+    - Name: TopMargin
+      Id: g=69cc4dfe1ee269c3eb8fd32bd9281f8e
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 20.0
+    - Name: RightMargin
+      Id: g=8f8922cf8f336a1615553f5b1924f8ab
+      Type: BaseVariableType
+      DataType: Size
+      ModellingRule: Optional
+      Value: 15.0
+    - Name: AutoRefreshTime
+      Id: g=e49e26d0c3c794df2c0921eca2973d6f
+      Type: BaseDataVariableType
+      DataType: Duration
+      ModellingRule: Optional
+      Value: "0:00:00:01.0000000"

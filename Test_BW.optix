@@ -105,15 +105,23 @@ Project:
    Uri: 'urn:FTOptix:SQLiteStore:Net'
    Module: FTOptix.SQLiteStore.Net
    Version: 1.0
+  27:
+   Uri: 'urn:FTOptix:EventLogger'
+   Module: FTOptix.EventLogger
+   Version: 2.0
+  28:
+   Uri: 'urn:FTOptix:EventLogger:Net'
+   Module: FTOptix.EventLogger.Net
+   Version: 1.0
  Statistics:
-  TotalNodeCount: 141618
-  Objects: 3156
+  TotalNodeCount: 141847
+  Objects: 3195
   ObjectTypes: 7
-  Variables: 138450
+  Variables: 138640
   VariableTypes: 0
   DataTypes: 0
   Methods: 5
-  References: 40
+  References: 45
   ReferenceTypes: 0
   Files: 30
  Nodes:

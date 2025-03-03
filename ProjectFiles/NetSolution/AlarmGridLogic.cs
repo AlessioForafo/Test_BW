@@ -5,6 +5,8 @@ using FTOptix.UI;
 using FTOptix.OPCUAServer;
 using FTOptix.Store;
 using FTOptix.SQLiteStore;
+using FTOptix.Report;
+using FTOptix.EventLogger;
 #endregion
 
 public class AlarmGridLogic : BaseNetLogic

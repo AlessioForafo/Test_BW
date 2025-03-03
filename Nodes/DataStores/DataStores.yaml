@@ -9,6 +9,71 @@ Children:
   - Name: Tables
     Id: g=eef97c49b55e926802c7ecdbd6bb0841
     Type: BaseObjectType
+    Children:
+    - Name: AlarmsEventLogger1
+      Id: g=5941abc631d30f33ea524b2f5c966e7b
+      Type: SQLiteStoreTable
+      Children:
+      - Class: Reference
+        Target: ns=23;i=12
+        Direction: Forward
+      - Class: Reference
+        Target: ns=23;i=15
+        Direction: Forward
+      - Class: Reference
+        Target: ns=23;i=21
+        Direction: Forward
+      - Class: Reference
+        Target: ns=23;i=20
+        Direction: Forward
+      - Name: Columns
+        Id: g=90ff854fe1f2a75974fd30a1208d0bc1
+        Type: BaseObjectType
+        Children:
+        - Name: ActiveState_Id
+          Id: g=9dc2d347dda4e447d31ec55ffbaaabcf
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: AckedState_Id
+          Id: g=3e49a2265cdf277ee242cabb11aba0fc
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: ConfirmedState_Id
+          Id: g=4f3b8ba25837fd8af93ae68bfe6059d6
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: ConditionName
+          Id: g=d1862eb463f1e6d452288879a69d7244
+          Type: StoreColumn
+          DataType: String
+        - Name: EnabledState_Id
+          Id: g=3e38ba7386af5e0c71654b763d36e55f
+          Type: StoreColumn
+          DataType: Boolean
+        - Name: SourceName
+          Id: g=a03f7c66f9d8afddbbe78fcdb689ac9a
+          Type: StoreColumn
+          DataType: String
+        - Name: Time
+          Id: g=e542fff0c9fb2df3c73a0ea3689c8596
+          Type: StoreColumn
+          DataType: UtcTime
+        - Name: 'Message_en-US'
+          Id: g=583974bd2d95c46a45f3351de56c76fa
+          Type: StoreColumn
+          DataType: String
+        - Name: 'Message_it-IT'
+          Id: g=fe99f58e4f0d8c2314db19628bf54ff9
+          Type: StoreColumn
+          DataType: String
+        - Name: Severity
+          Id: g=739bfd72882efdf988699087f052466d
+          Type: StoreColumn
+          DataType: UInt16
+        - Name: LocalTime
+          Id: g=bd7b66e00d617a5b72f57a922b918693
+          Type: StoreColumn
+          DataType: DateTime
   - Class: Reference
     Target: ns=25;i=30
     Direction: Forward
